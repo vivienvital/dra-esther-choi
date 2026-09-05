@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dra. Esther Choi · Cirurgiã Plástica</title>
+<meta name="description" content="Dra. Esther Choi, médica cirurgiã plástica formada pela USP. Cirurgia de ocidentalização das pálpebras, cirurgias mamárias e procedimentos estéticos em São Paulo.">
+<link rel="icon" href="assets/favicon.png">
+<meta property="og:title" content="Dra. Esther Choi · Cirurgiã Plástica">
+<meta property="og:description" content="Cirurgia de pálpebra asiática, cirurgias mamárias e estética avançada. Vila Mariana, São Paulo.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --ink:#2b2130;
+    --plum:#382b43;
+    --plum-deep:#241b2d;
+    --rose:#b3877e;
+    --rose-deep:#9a6f66;
+    --rose-soft:#e3c8c0;
+    --ivory:#f8f3ed;
+    --sand:#efe4db;
+    --paper:#fdfaf6;
+    --line:rgba(43,33,48,.14);
+    --shadow:0 26px 60px -28px rgba(37,27,45,.4);
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+    color:var(--ink);
+    background:var(--ivory);
+    line-height:1.65;
+    font-size:17px;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;line-height:1.08;letter-spacing:.005em}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{width:min(1180px,90vw);margin-inline:auto}
+  .eyebrow{
+    font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;
+    font-weight:600;color:var(--rose-deep);
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:.6em;
+    font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;
+    padding:1.05em 1.9em;border-radius:999px;border:1px solid var(--plum);
+    background:var(--plum);color:#f4ece6;transition:.35s ease;
+    cursor:pointer;
+  }
+  .btn:hover{background:var(--plum-deep);border-color:var(--plum-deep);transform:translateY(-2px)}
+  .btn--ghost{background:transparent;color:var(--plum);}
+  .btn--ghost:hover{background:var(--plum);color:#f4ece6}
+  .btn--light{background:var(--rose-soft);border-color:var(--rose-soft);color:var(--plum-deep)}
+  .btn--light:hover{background:#fff;border-color:#fff}
+
+  /* ---------- header ---------- */
+  header{
+    position:fixed;inset:0 0 auto 0;z-index:100;
+    padding:1.4rem 0;transition:.4s ease;
+  }
+  header.scrolled{
+    background:rgba(248,243,237,.9);backdrop-filter:blur(12px);
+    padding:.85rem 0;box-shadow:0 1px 0 var(--line);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:2rem}
+  .nav__logo{display:flex;align-items:center;gap:.7rem}
+  .nav__logo img{height:56px;width:auto;transition:.4s ease}
+  header.scrolled .nav__logo img{height:46px}
+  .nav__links{display:flex;gap:2.4rem;list-style:none}
+  .nav__links a{
+    font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;
+    color:var(--ink);opacity:.8;transition:.25s;position:relative;
+  }
+  .nav__links a::after{
+    content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;
+    background:var(--rose-deep);transition:.3s;
+  }
+  .nav__links a:hover{opacity:1}
+  .nav__links a:hover::after{width:100%}
+  .nav__cta{display:inline-flex}
+  .nav__toggle{display:none;background:none;border:none;cursor:pointer;flex-direction:column;gap:5px;padding:6px}
+  .nav__toggle span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;padding:11rem 0 6rem}
+  .hero__grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center;
+  }
+  .hero__eye{
+    position:absolute;top:6rem;right:-4rem;width:340px;opacity:.16;
+    pointer-events:none;
+  }
+  .hero h1{
+    font-size:clamp(3rem,6.4vw,5.4rem);margin:1.4rem 0 1.6rem;
+  }
+  .hero h1 em{font-style:italic;color:var(--rose-deep)}
+  .hero__lead{font-size:1.12rem;max-width:34ch;color:#4a3f4f}
+  .hero__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
+  .hero__figure{position:relative}
+  .hero__figure img{
+    width:100%;border-radius:280px 280px 18px 18px;object-fit:cover;
+    aspect-ratio:3/3.7;box-shadow:var(--shadow);position:relative;z-index:2;
+  }
+  .hero__figure::before{
+    content:"";position:absolute;left:-8%;top:8%;width:78%;height:88%;
+    background:linear-gradient(160deg,var(--plum),var(--plum-deep));
+    border-radius:260px 260px 14px 14px;z-index:1;
+  }
+  .hero__badge{
+    position:absolute;right:-7%;bottom:6%;z-index:3;
+    background:var(--paper);border-radius:14px;padding:1.2rem 1.5rem;
+    box-shadow:var(--shadow);width:240px;
+    display:flex;align-items:baseline;gap:.7rem;
+  }
+  .hero__badge strong{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:.8;color:var(--plum);font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
+  .hero__badge span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;line-height:1.35}
+
+  /* ---------- credentials strip ---------- */
+  .creds{background:var(--plum);color:#e9ddd6}
+  .creds .wrap{
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.4rem 2rem;
+    padding:2.1rem 0;
+  }
+  .creds div{display:flex;flex-direction:column;gap:.15rem}
+  .creds b{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:500;letter-spacing:.01em}
+  .creds small{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;opacity:.62}
+
+  /* ---------- philosophy ---------- */
+  .philo{padding:7rem 0}
+  .philo__grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:center}
+  .philo h2{font-size:clamp(2.1rem,3.6vw,3.1rem);margin:1.1rem 0 1.5rem}
+  .philo p+p{margin-top:1.1rem}
+  .philo__fig{position:relative}
+  .philo__fig img{border-radius:16px;width:100%;aspect-ratio:4/4.3;object-fit:cover;filter:saturate(.96)}
+  .philo__fig figcaption{
+    position:absolute;left:1.4rem;bottom:1.4rem;color:#fff;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;
+    text-shadow:0 2px 16px rgba(0,0,0,.5);
+  }
+
+  /* ---------- procedures ---------- */
+  .proc{background:var(--sand);padding:7rem 0}
+  .proc__head{max-width:52ch;margin-bottom:4.5rem}
+  .proc__head h2{font-size:clamp(2.2rem,4vw,3.4rem);margin:1rem 0}
+  .prow{
+    display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:center;
+    padding:4rem 0;border-top:1px solid var(--line);
+  }
+  .prow:last-child{border-bottom:1px solid var(--line)}
+  .prow:nth-child(even) .prow__media{order:2}
+  .prow__media{position:relative}
+  .prow__media img{border-radius:16px;width:100%;aspect-ratio:1/1;object-fit:cover;box-shadow:var(--shadow)}
+  .prow__icon{
+    position:absolute;top:-26px;left:-26px;width:88px;height:88px;
+    background:var(--paper);border-radius:50%;display:grid;place-items:center;
+    box-shadow:var(--shadow);padding:20px;
+  }
+  .prow__icon img{width:100%;box-shadow:none;border-radius:0}
+  .prow h3{font-size:clamp(1.8rem,3vw,2.5rem);margin:.5rem 0 1rem}
+  .prow__list{list-style:none;margin:1.5rem 0 2rem;display:flex;flex-wrap:wrap;gap:.6rem}
+  .prow__list li{
+    font-size:.8rem;letter-spacing:.04em;padding:.5em 1em;border:1px solid var(--line);
+    border-radius:999px;background:rgba(255,255,255,.5);
+  }
+  .link-arrow{
+    display:inline-flex;align-items:center;gap:.5em;font-weight:600;
+    font-size:.82rem;letter-spacing:.13em;text-transform:uppercase;color:var(--rose-deep);
+    border-bottom:1px solid currentColor;padding-bottom:.3em;transition:.3s;
+  }
+  .link-arrow:hover{gap:.9em;color:var(--plum)}
+
+  /* ---------- about ---------- */
+  .about{padding:7rem 0}
+  .about__grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:4.5rem}
+  .about__fig{position:sticky;top:7rem;align-self:start}
+  .about__fig img{border-radius:16px 16px 120px 16px;width:100%;aspect-ratio:3/3.4;object-fit:cover;box-shadow:var(--shadow)}
+  .about h2{font-size:clamp(2.1rem,3.8vw,3.2rem);margin:1rem 0 1.4rem}
+  .about__lead{font-size:1.15rem;color:#4a3f4f;max-width:44ch}
+  .timeline{margin-top:3rem;border-left:1px solid var(--line);padding-left:2rem}
+  .timeline li{list-style:none;position:relative;padding-bottom:2.1rem}
+  .timeline li:last-child{padding-bottom:0}
+  .timeline li::before{
+    content:"";position:absolute;left:calc(-2rem - 5px);top:.55rem;width:9px;height:9px;
+    border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px var(--sand);
+  }
+  .timeline h4{font-family:'Hanken Grotesk',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;margin-bottom:.3rem}
+  .timeline p{font-size:1.02rem}
+
+  /* ---------- final cta ---------- */
+  .final{background:linear-gradient(150deg,var(--plum),var(--plum-deep));color:#f1e7e0;padding:6.5rem 0;text-align:center}
+  .final h2{font-size:clamp(2.3rem,4.5vw,3.6rem);margin-bottom:1.2rem}
+  .final p{max-width:46ch;margin:0 auto 2.4rem;opacity:.82}
+  .final__meta{
+    margin-top:3.5rem;display:flex;flex-wrap:wrap;justify-content:center;gap:1rem 3rem;
+    font-size:.9rem;opacity:.8;
+  }
+  .final__meta span{display:inline-flex;gap:.5em;align-items:center}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--plum-deep);color:#c9bcc4;padding:4rem 0 2.5rem;font-size:.86rem}
+  .foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot__grid img{height:52px;width:auto;margin-bottom:1.2rem;filter:brightness(0) invert(1);opacity:.9}
+  .foot__grid h5{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:1rem;font-weight:600}
+  .foot__grid a:hover{color:#fff}
+  .foot__grid p{margin-bottom:.4rem}
+  .foot__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding-top:2rem;font-size:.76rem;opacity:.65}
+  .foot__bottom a{border-bottom:1px solid currentColor}
+  .disclaimer{max-width:70ch;margin-top:1.2rem;font-size:.74rem;line-height:1.6;opacity:.55}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media(max-width:960px){
+    .nav__links,.nav__cta{display:none}
+    .nav__toggle{display:flex}
+    .nav.open .nav__links{
+      display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;
+      background:var(--ivory);padding:2rem 5vw;gap:1.6rem;box-shadow:var(--shadow);
+    }
+    .hero__grid,.philo__grid,.proc .prow,.about__grid{grid-template-columns:1fr;gap:3rem}
+    .hero{padding:9rem 0 4rem}
+    .hero__eye{display:none}
+    .hero__figure{max-width:460px;margin:0 auto}
+    .prow:nth-child(even) .prow__media{order:0}
+    .about__fig{position:static}
+    .about__fig img{max-width:420px;border-radius:16px}
+  }
+  @media(max-width:560px){
+    body{font-size:16px}
+    .hero__badge{right:0;bottom:-10%}
+    .prow__icon{width:66px;height:66px;padding:14px;top:-18px;left:-14px}
+    .creds .wrap{gap:1.4rem}
+    .creds div{width:45%}
+  }
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav class="nav wrap" id="nav">
+    <a href="#top" class="nav__logo"><img src="assets/logo.png" alt="Dra. Esther Choi · Cirurgia Plástica"></a>
+    <ul class="nav__links">
+      <li><a href="#procedimentos">Procedimentos</a></li>
+      <li><a href="#filosofia">Filosofia</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a class="btn nav__cta" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+    <button class="nav__toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero__eye" src="assets/icone-olho.png" alt="">
+      <div class="hero__grid">
+        <div class="hero__copy reveal">
+          <p class="eyebrow">Cirurgiã Plástica · CRM 144238-SP · RQE 65968</p>
+          <h1>Cirurgia plástica com <em>rigor técnico</em> e leitura estética precisa</h1>
+          <p class="hero__lead">Formação integral na USP e no Hospital das Clínicas, com especialização em cirurgia de ocidentalização das pálpebras, cirurgia mamária e reconstrução.</p>
+          <div class="hero__actions">
+            <a class="btn" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
+            <a class="btn btn--ghost" href="#procedimentos">Ver procedimentos</a>
+          </div>
+        </div>
+        <figure class="hero__figure reveal">
+          <img src="assets/retrato-poltrona.jpg" alt="Dra. Esther Choi, cirurgiã plástica">
+          <div class="hero__badge">
+            <strong>17</strong>
+            <span>anos ao ingressar na Medicina da USP</span>
+          </div>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="creds">
+    <div class="wrap">
+      <div><b>USP</b><small>Faculdade de Medicina</small></div>
+      <div><b>HC-USP</b><small>Residência · Cirurgia Geral e Plástica</small></div>
+      <div><b>ICESP</b><small>Fellow · Reconstrução e Cirurgia Mamária</small></div>
+      <div><b>Sírio-Libanês</b><small>Doutorado</small></div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section class="philo" id="filosofia">
+    <div class="wrap philo__grid">
+      <div class="reveal">
+        <p class="eyebrow">Filosofia de trabalho</p>
+        <h2>Cada procedimento parte da anatomia e da história de quem senta na cadeira</h2>
+        <p>A cirurgia plástica muda a forma como a pessoa se reconhece. Por isso o plano cirúrgico nunca é padrão: ele considera a estrutura de cada rosto e de cada corpo, a etnia, a expectativa real e o que a técnica consegue entregar com segurança.</p>
+        <p>O compromisso é com resultado natural, indicação honesta e acompanhamento próximo em todas as etapas, do pré ao pós-operatório.</p>
+      </div>
+      <figure class="philo__fig reveal">
+        <img src="assets/cirurgia.jpg" alt="Dra. Esther Choi em centro cirúrgico">
+        <figcaption>Centro cirúrgico</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROCEDURES -->
+  <section class="proc" id="procedimentos">
+    <div class="wrap">
+      <div class="proc__head reveal">
+        <p class="eyebrow">Áreas de atuação</p>
+        <h2>Três frentes principais</h2>
+        <p>Da cirurgia de pálpebra asiática à reconstrução mamária e aos tratamentos de consultório, cada frente tem protocolo próprio e indicação individualizada.</p>
+      </div>
+
+      <div class="prow reveal">
+        <div class="prow__media">
+          <div class="prow__icon"><img src="assets/icone-olho.png" alt=""></div>
+          <img src="assets/blefaroplastia.jpg" alt="Cirurgia de ocidentalização das pálpebras">
+        </div>
+        <div class="prow__text">
+          <p class="eyebrow">01 · Estética oriental</p>
+          <h3>Cirurgia de ocidentalização das pálpebras</h3>
+          <p>Também chamada de dupla pálpebra, cria uma prega palpebral definida e harmônica com os traços asiáticos, respeitando a expressão natural do olhar. Inclui a avaliação de blefaroplastia quando há excesso de pele ou bolsas.</p>
+          <ul class="prow__list">
+            <li>Dupla pálpebra</li><li>Blefaroplastia superior</li><li>Blefaroplastia inferior</li><li>Correção de epicanto</li>
+          </ul>
+          <a class="link-arrow" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20cirurgia%20de%20p%C3%A1lpebra." target="_blank" rel="noopener">Falar sobre esse procedimento &rarr;</a>
+        </div>
+      </div>
+
+      <div class="prow reveal">
+        <div class="prow__media">
+          <div class="prow__icon"><img src="assets/icone-mama.png" alt=""></div>
+          <img src="assets/explante.jpg" alt="Cirurgias mamárias">
+        </div>
+        <div class="prow__text">
+          <p class="eyebrow">02 · Cirurgia mamária</p>
+          <h3>Cirurgias das mamas e reconstrução</h3>
+          <p>Formação de fellow em reconstrução e cirurgia mamária no Instituto do Câncer do Estado de São Paulo. Planejamento que altera volume, formato e posicionamento com foco em simetria e naturalidade.</p>
+          <ul class="prow__list">
+            <li>Mamoplastia de aumento</li><li>Mamoplastia de redução</li><li>Implante de silicone</li><li>Explante</li><li>Remodelação</li><li>Reconstrução</li>
+          </ul>
+          <a class="link-arrow" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20cirurgia%20mam%C3%A1ria." target="_blank" rel="noopener">Falar sobre esse procedimento &rarr;</a>
+        </div>
+      </div>
+
+      <div class="prow reveal">
+        <div class="prow__media">
+          <div class="prow__icon"><img src="assets/icone-seringa.png" alt=""></div>
+          <img src="assets/estetica-tecido.jpg" alt="Procedimentos estéticos minimamente invasivos">
+        </div>
+        <div class="prow__text">
+          <p class="eyebrow">03 · Estética avançada</p>
+          <h3>Procedimentos minimamente invasivos</h3>
+          <p>Tratamentos realizados em consultório para textura de pele, flacidez e contorno, combinados de acordo com o objetivo de cada paciente e sem afastamento das atividades.</p>
+          <ul class="prow__list">
+            <li>Laser</li><li>Preenchedores</li><li>Bioestimuladores de colágeno</li><li>Ulthera&reg;</li><li>Toxina botulínica</li>
+          </ul>
+          <a class="link-arrow" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20sobre%20procedimentos%20est%C3%A9ticos." target="_blank" rel="noopener">Falar sobre esse procedimento &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="sobre">
+    <div class="wrap about__grid">
+      <figure class="about__fig reveal">
+        <img src="assets/retrato-consultorio.jpg" alt="Dra. Esther Choi no consultório">
+      </figure>
+      <div class="reveal">
+        <p class="eyebrow">Sobre a Dra. Esther Choi</p>
+        <h2>Uma trajetória construída inteira dentro da escola da USP</h2>
+        <p class="about__lead">Quis ser médica desde criança. Entrei aos 17 anos na Faculdade de Medicina da USP e me apaixonei pela cirurgia ainda na graduação, acompanhando equipes cirúrgicas nas noites e nos fins de semana livres.</p>
+        <ul class="timeline">
+          <li>
+            <h4>Graduação</h4>
+            <p>Faculdade de Medicina da USP · seis anos de formação em período integral.</p>
+          </li>
+          <li>
+            <h4>Residência · Cirurgia Geral</h4>
+            <p>Hospital das Clínicas da USP · dois anos, pré-requisito para a cirurgia plástica.</p>
+          </li>
+          <li>
+            <h4>Residência · Cirurgia Plástica</h4>
+            <p>Hospital das Clínicas da USP · três anos dedicados à especialidade.</p>
+          </li>
+          <li>
+            <h4>Fellow · Reconstrução e Cirurgia Mamária</h4>
+            <p>ICESP, Instituto do Câncer do Estado de São Paulo · um ano de complementação como especialista.</p>
+          </li>
+          <li>
+            <h4>Doutorado</h4>
+            <p>Tese aprovada pelo Hospital Sírio-Libanês. Seguimento contínuo de estudo e aprimoramento.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final" id="contato">
+    <div class="wrap reveal">
+      <p class="eyebrow" style="color:var(--rose-soft)">Agende sua avaliação</p>
+      <h2>Uma conversa para entender o que faz sentido para você</h2>
+      <p>Na avaliação, a Dra. Esther examina, esclarece indicações e riscos e monta o plano possível para o seu caso. Sem promessa de resultado padrão.</p>
+      <a class="btn btn--light" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Falar no WhatsApp</a>
+      <div class="final__meta">
+        <span>Rua Vergueiro, 2253 · cj. 1002 · Vila Mariana, São Paulo · SP</span>
+        <span>Telefone (11) 2776-5651</span>
+        <span>WhatsApp (11) 93029-2382</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot__grid">
+      <div>
+        <img src="assets/logo.png" alt="Dra. Esther Choi">
+        <p>Dra. Esther Choi · Médica Cirurgiã Plástica</p>
+        <p>CRM 144238-SP · RQE 65968</p>
+      </div>
+      <div>
+        <h5>Atendimento</h5>
+        <p>Rua Vergueiro, 2253</p>
+        <p>cj. 1002 · Vila Mariana</p>
+        <p>São Paulo · SP · 04101-100</p>
+      </div>
+      <div>
+        <h5>Contato</h5>
+        <p><a href="tel:+551127765651">(11) 2776-5651</a></p>
+        <p><a href="https://wa.me/5511930292382" target="_blank" rel="noopener">WhatsApp (11) 93029-2382</a></p>
+        <p><a href="https://instagram.com/dra.estherchoi" target="_blank" rel="noopener">@dra.estherchoi</a></p>
+      </div>
+    </div>
+    <p class="disclaimer">Conteúdo de caráter informativo, sem intenção de promover autopromoção ou sensacionalismo, em conformidade com o Código de Ética Médica e as resoluções do Conselho Federal de Medicina. Os resultados de qualquer procedimento variam conforme as características individuais de cada paciente e não podem ser garantidos. Toda cirurgia envolve riscos, discutidos em consulta.</p>
+    <div class="foot__bottom">
+      <span>Copyright &copy; 2026 · Dra. Esther Choi · Todos os direitos reservados</span>
+      <span>Feito com &hearts; por <a href="https://instagram.com/vivienvital" target="_blank" rel="noopener">vivienvital</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var header=document.getElementById('header');
+  var onScroll=function(){header.classList.toggle('scrolled',window.scrollY>40)};
+  onScroll();window.addEventListener('scroll',onScroll,{passive:true});
+
+  var nav=document.getElementById('nav'),toggle=document.getElementById('toggle');
+  toggle.addEventListener('click',function(){nav.classList.toggle('open')});
+  nav.querySelectorAll('.nav__links a').forEach(function(a){
+    a.addEventListener('click',function(){nav.classList.remove('open')});
+  });
+
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+    });
+  },{threshold:.16,rootMargin:'0px 0px -60px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
