@@ -109,7 +109,7 @@
     stroke-linecap:round;stroke-linejoin:round;
   }
   .hero h1{
-    font-size:clamp(2.4rem,4vw,3.35rem);line-height:1.08;margin:1.1rem 0 1.3rem;
+    font-size:clamp(2.4rem,4vw,3.35rem);line-height:1.08;margin:0 0 1.4rem;
     text-wrap:balance;
   }
   .hero h1 em{font-style:italic;color:var(--rose-deep);white-space:nowrap}
@@ -220,6 +220,11 @@
   }
   .timeline h4{font-family:'Hanken Grotesk',sans-serif;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;margin-bottom:.3rem}
   .timeline p{font-size:1.02rem}
+  .reg-line{
+    margin-top:2.6rem;padding-top:1.4rem;border-top:1px solid var(--line);
+    font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--rose-deep);font-weight:600;
+  }
 
   /* ---------- final cta ---------- */
   .final{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(150deg,var(--plum),var(--plum-deep));color:#f1e7e0;padding:6.5rem 0;text-align:center}
@@ -239,15 +244,20 @@
   .final__meta span{display:inline-flex;gap:.5em;align-items:center}
 
   /* ---------- footer ---------- */
-  footer{background:var(--plum-deep);color:#c9bcc4;padding:4rem 0 2.5rem;font-size:.86rem}
-  .foot__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
-  .foot__grid img{height:52px;width:auto;margin-bottom:1.2rem;filter:brightness(0) invert(1);opacity:.9}
-  .foot__grid h5{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:1rem;font-weight:600}
-  .foot__grid a:hover{color:#fff}
-  .foot__grid p{margin-bottom:.4rem}
-  .foot__bottom{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;padding-top:2rem;font-size:.76rem;opacity:.65}
+  footer{background:var(--plum-deep);color:#c9bcc4;padding:4rem 0 2.5rem;font-size:.86rem;text-align:center}
+  .foot__cols{display:flex;justify-content:center;flex-wrap:wrap;gap:2.5rem 5rem;padding-bottom:2.8rem}
+  .foot__cols h5{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose-soft);margin-bottom:.9rem;font-weight:600}
+  .foot__cols a:hover{color:#fff}
+  .foot__cols p{margin-bottom:.4rem}
+  .foot__brand{
+    display:flex;flex-direction:column;align-items:center;gap:.35rem;
+    padding:2.8rem 0;border-top:1px solid rgba(255,255,255,.1);
+  }
+  .foot__brand img{height:54px;width:auto;filter:brightness(0) invert(1);opacity:.9;margin-bottom:.7rem}
+  .foot__brand p{font-size:.82rem;opacity:.72}
+  .foot__bottom{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1);font-size:.76rem;opacity:.65}
   .foot__bottom a{border-bottom:1px solid currentColor}
-  .disclaimer{max-width:70ch;margin-top:1.2rem;font-size:.74rem;line-height:1.6;opacity:.55}
+  .disclaimer{max-width:70ch;margin:0 auto;font-size:.74rem;line-height:1.6;opacity:.55}
   .credits{margin-top:.9rem;font-size:.68rem;opacity:.4}
   .credits a{border-bottom:1px solid currentColor}
 
@@ -311,7 +321,7 @@
   @media(max-width:560px){
     body{font-size:16px}
     .hero{padding:6rem 0 1.5rem}
-    .hero h1{font-size:1.95rem;line-height:1.14;margin:.8rem 0 .95rem}
+    .hero h1{font-size:1.95rem;line-height:1.14;margin:0 0 1rem}
     .hero__lead{font-size:1rem}
     .hero__actions{margin-top:1.4rem;gap:.7rem}
     .hero__actions .btn{width:100%;padding:.95em 1.4em}
@@ -322,8 +332,19 @@
     .hero__badge span{font-size:.66rem}
     .prow__icon{width:64px;height:64px;top:-18px;left:-14px}
     .prow__icon svg{width:30px;height:30px}
-    .creds .wrap{grid-template-columns:1fr}
+    .creds .wrap{grid-template-columns:1fr;padding:.5rem 0}
+    .creds div{padding:.95rem 0}
     .final__meta{gap:.6rem}
+
+    .philo,.proc,.about,.final{padding:3.75rem 0}
+    .philo__grid,.about__grid{gap:2.25rem}
+    .proc .prow{gap:2.25rem}
+    .prow{padding:2.5rem 0}
+    .proc__head{margin-bottom:2.75rem}
+    .about .timeline{margin-top:2rem}
+    .reg-line{margin-top:2rem;padding-top:1.1rem}
+    .foot__brand,.foot__cols{padding-top:2.25rem;padding-bottom:2.25rem}
+    footer{padding:3rem 0 2rem}
   }
 </style>
 </head>
@@ -358,7 +379,6 @@
       </svg>
       <div class="hero__grid">
         <div class="hero__copy reveal">
-          <p class="eyebrow">Cirurgiã Plástica · CRM 144238-SP · RQE 65968</p>
           <h1>Cirurgia plástica com<br class="hb"> <span class="alt">experiência</span>, <em>rigor técnico</em><br class="hb"> e leitura <span class="nb">estética precisa</span></h1>
           <p class="hero__lead">Formação integral na USP e no Hospital das Clínicas, com especialização em cirurgia de ocidentalização das pálpebras, cirurgia mamária e reconstrução.</p>
           <div class="hero__actions">
@@ -518,6 +538,7 @@
             <p>Tese aprovada pelo Hospital Sírio-Libanês. Seguimento contínuo de estudo e aprimoramento.</p>
           </li>
         </ul>
+        <p class="reg-line">Dra. Esther Choi · Médica Cirurgiã Plástica · CRM 144238-SP · RQE 65968</p>
       </div>
     </div>
   </section>
@@ -525,7 +546,10 @@
   <!-- FINAL CTA -->
   <!-- Vídeo de fundo: "Partículas flutuantes sobre plano de fundo roxo" via Magnific (magnific.com) -->
   <section class="final" id="contato">
-    <video class="final__bg" data-src="assets/dust.mp4" muted loop playsinline preload="none" poster="assets/final-poster.jpg" aria-hidden="true"></video>
+    <video class="final__bg" muted loop playsinline preload="none" poster="assets/final-poster.jpg" aria-hidden="true">
+      <source data-src="assets/dust.webm" type="video/webm">
+      <source data-src="assets/dust.mp4" type="video/mp4">
+    </video>
     <div class="wrap reveal">
       <p class="eyebrow" style="color:var(--rose-soft)">Agende sua avaliação</p>
       <h2>Uma conversa para entender<br> o que faz sentido para você</h2>
@@ -543,12 +567,7 @@
 
 <footer>
   <div class="wrap">
-    <div class="foot__grid">
-      <div>
-        <img src="assets/logo.png" alt="Dra. Esther Choi">
-        <p>Dra. Esther Choi · Médica Cirurgiã Plástica</p>
-        <p>CRM 144238-SP · RQE 65968</p>
-      </div>
+    <div class="foot__cols">
       <div>
         <h5>Atendimento</h5>
         <p>Rua Vergueiro, 2253</p>
@@ -561,6 +580,11 @@
         <p><a href="https://wa.me/5511930292382" target="_blank" rel="noopener">WhatsApp (11) 93029-2382</a></p>
         <p><a href="https://instagram.com/dra.estherchoi" target="_blank" rel="noopener">@dra.estherchoi</a></p>
       </div>
+    </div>
+    <div class="foot__brand">
+      <img src="assets/logo.png" alt="Dra. Esther Choi">
+      <p>Dra. Esther Choi · Médica Cirurgiã Plástica</p>
+      <p>CRM 144238-SP · RQE 65968</p>
     </div>
     <p class="disclaimer">Conteúdo de caráter informativo, sem intenção de promover autopromoção ou sensacionalismo, em conformidade com o Código de Ética Médica e as resoluções do Conselho Federal de Medicina. Os resultados de qualquer procedimento variam conforme as características individuais de cada paciente e não podem ser garantidos. Toda cirurgia envolve riscos, discutidos em consulta.</p>
     <div class="foot__bottom">
@@ -617,7 +641,10 @@
     var vio=new IntersectionObserver(function(entries){
       entries.forEach(function(e){
         if(!e.isIntersecting) return;
-        if(!finalBg.src){finalBg.src=finalBg.dataset.src;}
+        if(!finalBg.dataset.loaded){
+          finalBg.querySelectorAll('source[data-src]').forEach(function(s){s.src=s.dataset.src;});
+          finalBg.load();finalBg.dataset.loaded='1';
+        }
         var pl=finalBg.play();
         if(pl&&pl.then) pl.then(function(){finalBg.classList.add('on');}).catch(function(){});
         else finalBg.classList.add('on');
