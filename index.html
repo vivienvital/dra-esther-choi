@@ -89,7 +89,7 @@
   /* ---------- hero ---------- */
   .hero{position:relative;padding:9rem 0 4.5rem}
   .hero__grid{
-    display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center;
+    display:grid;grid-template-columns:1.15fr .85fr;gap:3.5rem;align-items:center;
   }
   .hero__eye{
     position:absolute;top:7rem;right:-3rem;width:300px;opacity:.2;
@@ -98,11 +98,14 @@
     stroke-linecap:round;stroke-linejoin:round;
   }
   .hero h1{
-    font-size:clamp(2.5rem,4.8vw,4rem);line-height:1.02;margin:1.1rem 0 1.3rem;
+    font-size:clamp(2.4rem,4vw,3.35rem);line-height:1.08;margin:1.1rem 0 1.3rem;
+    text-wrap:balance;
   }
-  .hero h1 em{font-style:italic;color:var(--rose-deep)}
+  .hero h1 em{font-style:italic;color:var(--rose-deep);white-space:nowrap}
   .hero h1 .alt{font-style:italic;color:#a67c4f}
   .hero h1 .nb{white-space:nowrap}
+  .hero h1 .hb{display:none}
+  @media(min-width:761px){.hero h1 .hb{display:inline}}
   .hero__lead{font-size:1.12rem;max-width:34ch;color:#4a3f4f}
   .hero__actions{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.4rem}
   .hero__figure{position:relative}
@@ -325,7 +328,7 @@
       <div class="hero__grid">
         <div class="hero__copy reveal">
           <p class="eyebrow">Cirurgiã Plástica · CRM 144238-SP · RQE 65968</p>
-          <h1>Cirurgia plástica com <span class="alt">experiência</span>, <em>rigor técnico</em> e leitura <span class="nb">estética precisa</span></h1>
+          <h1>Cirurgia plástica com<br class="hb"> <span class="alt">experiência</span>, <em>rigor técnico</em><br class="hb"> e leitura <span class="nb">estética precisa</span></h1>
           <p class="hero__lead">Formação integral na USP e no Hospital das Clínicas, com especialização em cirurgia de ocidentalização das pálpebras, cirurgia mamária e reconstrução.</p>
           <div class="hero__actions">
             <a class="btn" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener">Agendar avaliação</a>
