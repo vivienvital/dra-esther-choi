@@ -92,8 +92,10 @@
     display:grid;grid-template-columns:1.05fr .95fr;gap:4rem;align-items:center;
   }
   .hero__eye{
-    position:absolute;top:6rem;right:-4rem;width:340px;opacity:.16;
-    pointer-events:none;
+    position:absolute;top:7rem;right:-3rem;width:300px;opacity:.2;
+    pointer-events:none;color:var(--rose-deep);
+    fill:none;stroke:currentColor;stroke-width:1;
+    stroke-linecap:round;stroke-linejoin:round;
   }
   .hero h1{
     font-size:clamp(3rem,6.4vw,5.4rem);margin:1.4rem 0 1.6rem;
@@ -156,11 +158,16 @@
   .prow__media{position:relative}
   .prow__media img{border-radius:16px;width:100%;aspect-ratio:1/1;object-fit:cover;box-shadow:var(--shadow)}
   .prow__icon{
-    position:absolute;top:-26px;left:-26px;width:88px;height:88px;
+    position:absolute;top:-28px;left:-28px;width:94px;height:94px;
     background:var(--paper);border-radius:50%;display:grid;place-items:center;
-    box-shadow:var(--shadow);padding:20px;
+    box-shadow:var(--shadow);border:1px solid var(--rose-soft);
   }
-  .prow__icon img{width:100%;box-shadow:none;border-radius:0}
+  .prow__icon svg{
+    width:44px;height:44px;color:var(--plum);
+    fill:none;stroke:currentColor;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;
+  }
+  .prow__icon svg .fill{fill:var(--rose);stroke:none}
   .prow h3{font-size:clamp(1.8rem,3vw,2.5rem);margin:.5rem 0 1rem}
   .prow__list{list-style:none;margin:1.5rem 0 2rem;display:flex;flex-wrap:wrap;gap:.6rem}
   .prow__list li{
@@ -235,7 +242,8 @@
   @media(max-width:560px){
     body{font-size:16px}
     .hero__badge{right:0;bottom:-10%}
-    .prow__icon{width:66px;height:66px;padding:14px;top:-18px;left:-14px}
+    .prow__icon{width:64px;height:64px;top:-18px;left:-14px}
+    .prow__icon svg{width:30px;height:30px}
     .creds .wrap{gap:1.4rem}
     .creds div{width:45%}
   }
@@ -262,7 +270,12 @@
   <!-- HERO -->
   <section class="hero">
     <div class="wrap">
-      <img class="hero__eye" src="assets/icone-olho.png" alt="">
+      <svg class="hero__eye" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M6 26q18-19 36 0"/>
+        <path d="M6 26q18 15 36 0"/>
+        <path d="M10 20q14-11 28 0"/>
+        <circle cx="24" cy="26" r="6"/>
+      </svg>
       <div class="hero__grid">
         <div class="hero__copy reveal">
           <p class="eyebrow">Cirurgiã Plástica · CRM 144238-SP · RQE 65968</p>
@@ -321,7 +334,15 @@
 
       <div class="prow reveal">
         <div class="prow__media">
-          <div class="prow__icon"><img src="assets/icone-olho.png" alt=""></div>
+          <div class="prow__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M6 26q18-19 36 0"/>
+              <path d="M6 26q18 15 36 0"/>
+              <path d="M10 20q14-11 28 0"/>
+              <circle cx="24" cy="26" r="6"/>
+              <circle class="fill" cx="24" cy="26" r="1.8"/>
+            </svg>
+          </div>
           <img src="assets/blefaroplastia.jpg" alt="Cirurgia de ocidentalização das pálpebras">
         </div>
         <div class="prow__text">
@@ -337,7 +358,16 @@
 
       <div class="prow reveal">
         <div class="prow__media">
-          <div class="prow__icon"><img src="assets/icone-mama.png" alt=""></div>
+          <div class="prow__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M7 14c0 10 4.5 18 13 18 3.5 0 6-1.8 6-1.8"/>
+              <path d="M41 14c0 10-4.5 18-13 18-3.5 0-6-1.8-6-1.8"/>
+              <circle cx="15.5" cy="21" r="2.4"/>
+              <circle cx="32.5" cy="21" r="2.4"/>
+              <circle class="fill" cx="15.5" cy="21" r=".9"/>
+              <circle class="fill" cx="32.5" cy="21" r=".9"/>
+            </svg>
+          </div>
           <img src="assets/explante.jpg" alt="Cirurgias mamárias">
         </div>
         <div class="prow__text">
@@ -353,7 +383,13 @@
 
       <div class="prow reveal">
         <div class="prow__media">
-          <div class="prow__icon"><img src="assets/icone-seringa.png" alt=""></div>
+          <div class="prow__icon">
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M20 9c6.5 8 11 14 11 18.8A11 11 0 0 1 9 27.8C9 23 13.5 17 20 9Z"/>
+              <path d="M15 28a5 5 0 0 0 5 5"/>
+              <path d="M35 8l1.7 4.8L41.5 14.5l-4.8 1.7L35 21l-1.7-4.8L28.5 14.5l4.8-1.7L35 8Z" class="fill"/>
+            </svg>
+          </div>
           <img src="assets/estetica-tecido.jpg" alt="Procedimentos estéticos minimamente invasivos">
         </div>
         <div class="prow__text">
