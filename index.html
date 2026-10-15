@@ -70,6 +70,33 @@
   .btn--light:hover{transform:translateY(-2px);box-shadow:0 20px 42px -14px rgba(0,0,0,.45)}
   @media(prefers-reduced-motion:reduce){.btn,.btn--light{animation:none}}
 
+  /* ---------- whatsapp flutuante ---------- */
+  .wa-float{
+    position:fixed;right:24px;bottom:24px;z-index:120;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 32px -10px rgba(18,70,45,.55);
+    transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  }
+  .wa-float::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    box-shadow:0 0 0 0 rgba(37,211,102,.55);
+    animation:waPulse 2.6s ease-out infinite;
+  }
+  .wa-float:hover{background:#1EBE5A;transform:translateY(-3px) scale(1.05);box-shadow:0 18px 38px -10px rgba(18,70,45,.6)}
+  .wa-float svg{width:30px;height:30px;position:relative;z-index:1}
+  @keyframes waPulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}
+    70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}
+  }
+  @media(max-width:560px){
+    .wa-float{right:16px;bottom:16px;width:54px;height:54px}
+    .wa-float svg{width:27px;height:27px}
+  }
+  @media(prefers-reduced-motion:reduce){.wa-float::before{animation:none}}
+
   /* ---------- header ---------- */
   header{
     position:fixed;inset:0 0 auto 0;z-index:100;
@@ -332,6 +359,7 @@
     .hero__lead{font-size:1rem}
     .hero__actions{margin-top:1.4rem;gap:.7rem}
     .hero__actions .btn{width:100%;padding:.95em 1.4em}
+    .hero__grid{gap:1rem}
     .hero__figure{max-width:320px}
     .hero__figure img{aspect-ratio:1/1.12;border-radius:170px 170px 14px 14px}
     .hero__badge{right:-2%;bottom:-6%;width:190px;padding:.85rem 1.05rem;gap:.55rem}
@@ -601,6 +629,10 @@
     <p class="credits">Vídeo de fundo: &ldquo;Partículas flutuantes sobre plano de fundo roxo&rdquo; via <a href="https://www.magnific.com" target="_blank" rel="noopener">Magnific</a>.</p>
   </div>
 </footer>
+
+<a class="wa-float" href="https://wa.me/5511930292382?text=Ol%C3%A1%2C%20vi%20o%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2c-5.514 0-9.997 4.483-9.997 9.997 0 1.763.46 3.483 1.334 4.997L2 22l5.128-1.345a9.953 9.953 0 0 0 4.876 1.242h.004c5.514 0 9.997-4.484 9.997-9.998C21.998 6.483 17.518 2 12.004 2zm0 18.17h-.003a8.27 8.27 0 0 1-4.212-1.152l-.302-.18-3.145.825.838-3.064-.197-.314a8.254 8.254 0 0 1-1.267-4.419c0-4.569 3.718-8.287 8.29-8.287 4.57 0 8.287 3.718 8.287 8.29 0 4.569-3.718 8.287-8.286 8.287z"/></svg>
+</a>
 
 <script>
   var header=document.getElementById('header');
