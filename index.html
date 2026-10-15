@@ -163,12 +163,12 @@
   @keyframes heroSheen{to{background-position:0 100%}}
   .hero__badge{
     position:absolute;right:-7%;bottom:6%;z-index:3;
-    background:var(--paper);border-radius:14px;padding:1.2rem 1.5rem;
-    box-shadow:var(--shadow);width:240px;
-    display:flex;align-items:baseline;gap:.7rem;
+    background:var(--paper);border-radius:14px;padding:1.1rem 1.4rem;
+    box-shadow:var(--shadow);width:214px;
+    display:flex;flex-direction:column;gap:.3rem;
   }
-  .hero__badge strong{font-family:'Cormorant Garamond',serif;font-size:2.6rem;line-height:.8;color:var(--plum);font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1}
-  .hero__badge span{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--rose-deep);font-weight:600;line-height:1.35}
+  .hero__badge strong{font-family:'Cormorant Garamond',serif;font-weight:500;font-style:italic;font-size:1.5rem;line-height:1.2;color:var(--plum)}
+  .hero__badge span{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-deep);font-weight:600}
 
   /* ---------- credentials strip ---------- */
   .creds{background:var(--plum);color:#e9ddd6}
@@ -362,9 +362,9 @@
     .hero__grid{gap:1rem}
     .hero__figure{max-width:320px}
     .hero__figure img{aspect-ratio:1/1.12;border-radius:170px 170px 14px 14px}
-    .hero__badge{right:-2%;bottom:-6%;width:190px;padding:.85rem 1.05rem;gap:.55rem}
-    .hero__badge strong{font-size:2rem}
-    .hero__badge span{font-size:.66rem}
+    .hero__badge{right:-2%;bottom:-6%;width:180px;padding:.85rem 1.05rem;gap:.25rem}
+    .hero__badge strong{font-size:1.25rem}
+    .hero__badge span{font-size:.64rem}
     .prow__icon{width:64px;height:64px;top:-18px;left:-14px}
     .prow__icon svg{width:30px;height:30px}
     .creds .wrap{grid-template-columns:1fr;padding:.5rem 0}
@@ -425,8 +425,8 @@
           <span class="hero__panel" aria-hidden="true"></span>
           <img src="assets/retrato-poltrona.jpg" alt="Dra. Esther Choi, cirurgiã plástica">
           <div class="hero__badge">
-            <strong>17</strong>
-            <span>anos ao ingressar na Medicina da USP</span>
+            <strong>Cirurgiã Plástica</strong>
+            <span>em São Paulo</span>
           </div>
         </figure>
       </div>
